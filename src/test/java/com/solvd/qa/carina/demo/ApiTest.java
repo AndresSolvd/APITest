@@ -1,13 +1,9 @@
 package com.solvd.qa.carina.demo;
 
-import com.solvd.qa.carina.demo.api.DeleteUserMethod;
-import com.solvd.qa.carina.demo.api.GetUserMethods;
 import com.solvd.qa.carina.demo.api.homework.*;
 import com.zebrunner.carina.api.apitools.validation.JsonCompareKeywords;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
-import com.zebrunner.carina.core.registrar.tag.Priority;
-import com.zebrunner.carina.core.registrar.tag.TestPriority;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.annotations.Test;
 
