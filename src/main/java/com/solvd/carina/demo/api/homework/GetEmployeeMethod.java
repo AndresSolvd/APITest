@@ -11,8 +11,8 @@ import com.zebrunner.carina.utils.config.Configuration;
 @Endpoint(url = "${base_url}/employee/1", methodType = HttpMethodType.GET)
 @ResponseTemplatePath(path = "api/users/_get/rs1.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class GetEmployee extends AbstractApiMethodV2 {
-    public GetEmployee() {
+public class GetEmployeeMethod extends AbstractApiMethodV2 {
+    public GetEmployeeMethod() {
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url"));
     }
 }
