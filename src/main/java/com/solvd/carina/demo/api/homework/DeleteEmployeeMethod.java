@@ -13,9 +13,9 @@ import com.zebrunner.carina.utils.config.Configuration;
 @RequestTemplatePath(path = "api/users/_delete/rq1.json")
 @ResponseTemplatePath(path = "api/users/_delete/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class DeleteEmployee extends AbstractApiMethodV2 {
+public class DeleteEmployeeMethod extends AbstractApiMethodV2 {
 
-    public DeleteEmployee() {
+    public DeleteEmployeeMethod() {
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url"));
     }
 }

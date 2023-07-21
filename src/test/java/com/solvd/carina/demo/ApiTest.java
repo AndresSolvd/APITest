@@ -11,25 +11,25 @@ public class ApiTest implements IAbstractTest {
 
     @Test()
     @MethodOwner(owner = "qpsdemo")
-    public void testGetEmployee() throws Exception {
-        GetEmployee getEmployee = new GetEmployee();
-        getEmployee.callAPIExpectSuccess();
-        getEmployee.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+    public void testGetEmployeeMethod() throws Exception {
+        GetEmployeeMethod getEmployeeMethod = new GetEmployeeMethod();
+        getEmployeeMethod.callAPIExpectSuccess();
+        getEmployeeMethod.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
     }
 
     @Test()
     @MethodOwner(owner = "qpsdemo")
-    public void testGetAllEmployees() throws Exception {
-        GetAllEmployees getAllEmployees = new GetAllEmployees();
-        getAllEmployees.callAPIExpectSuccess();
-        getAllEmployees.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+    public void testGetAllEmployeesMethod() throws Exception {
+        GetAllEmployeesMethod getAllEmployeesMethod = new GetAllEmployeesMethod();
+        getAllEmployeesMethod.callAPIExpectSuccess();
+        getAllEmployeesMethod.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
     }
 
     @Test()
     @MethodOwner(owner = "qpsdemo")
-    public void testCreateEmployee() throws Exception {
+    public void testCreateEmployeeMethod() throws Exception {
         // Preparing request
-        CreateEmployee api = new CreateEmployee();
+        CreateEmployeeMethod api = new CreateEmployeeMethod();
         api.setProperties("api/users/user.properties");
 
         // Making call to endpoint
@@ -38,9 +38,9 @@ public class ApiTest implements IAbstractTest {
 
     @Test()
     @MethodOwner(owner = "qpsdemo")
-    public void testUpdateEmployee() throws Exception {
+    public void testUpdateEmployeeMethod() throws Exception {
         // Preparing request
-        UpdateEmployee api = new UpdateEmployee();
+        UpdateEmployeeMethod api = new UpdateEmployeeMethod();
         api.setProperties("api/users/user.properties");
 
         // Making call to endpoint
@@ -49,9 +49,9 @@ public class ApiTest implements IAbstractTest {
 
     @Test()
     @MethodOwner(owner = "qpsdemo")
-    public void DeleteEmployee() {
-        DeleteEmployee deleteEmployee = new DeleteEmployee();
-        deleteEmployee.setProperties("api/users/user.properties");
-        deleteEmployee.callAPIExpectSuccess();
+    public void DeleteEmployeeMethod() {
+        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod();
+        deleteEmployeeMethod.setProperties("api/users/user.properties");
+        deleteEmployeeMethod.callAPIExpectSuccess();
     }
 }
