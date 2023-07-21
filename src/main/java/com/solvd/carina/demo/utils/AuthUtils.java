@@ -1,7 +1,7 @@
 package com.solvd.carina.demo.utils;
 
-import com.solvd.carina.demo.gui.pages.saucedemo.LoginPage;
-import com.solvd.carina.demo.gui.pages.saucedemo.ProductsPage;
+import com.solvd.carina.demo.gui.saucedemo.LoginPage;
+import com.solvd.carina.demo.gui.saucedemo.ProductsPage;
 import com.zebrunner.carina.utils.R;
 import com.zebrunner.carina.utils.factory.ICustomTypePageFactory;
 

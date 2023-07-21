@@ -1,6 +1,7 @@
-package com.solvd.carina.demo.gui.pages.saucedemo;
+package com.solvd.carina.demo.gui.saucedemo;
 
-import com.solvd.carina.demo.gui.pages.saucedemo.components.CatalogProductItem;
+import com.solvd.carina.demo.gui.saucedemo.components.BurgerMenu;
+import com.solvd.carina.demo.gui.saucedemo.components.CatalogProductItem;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
@@ -25,10 +26,17 @@ public class ProductsPage extends AbstractPage {
     @FindBy(xpath = "//div[@class='inventory_item']")
     private List<CatalogProductItem> products;
 
+    @FindBy(xpath ="//button[@id='react-burger-menu-btn']")
+    private ExtendedWebElement burgerMenu;
+
     protected ProductsPage(WebDriver driver) {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
         setUiLoadedMarker(pageTitleLabel);
+    }
+
+    public void clickBurgerMenu() {
+        burgerMenu.click();
     }
 
     public List<CatalogProductItem> getProductItems() {

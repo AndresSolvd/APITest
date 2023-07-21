@@ -1,4 +1,4 @@
-package com.solvd.carina.demo.gui.pages.saucedemo.components;
+package com.solvd.carina.demo.gui.saucedemo.components;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;

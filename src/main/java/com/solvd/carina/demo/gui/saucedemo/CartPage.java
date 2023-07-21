@@ -1,4 +1,4 @@
-package com.solvd.carina.demo.gui.pages.saucedemo;
+package com.solvd.carina.demo.gui.saucedemo;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
@@ -24,7 +24,6 @@ public class CartPage extends AbstractPage {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
         setUiLoadedMarker(pageTitleLabel);
-//        setPageAbsoluteURL(R.CONFIG.get("url"));
     }
 
     public boolean isProductDisplayed(String productName) {
