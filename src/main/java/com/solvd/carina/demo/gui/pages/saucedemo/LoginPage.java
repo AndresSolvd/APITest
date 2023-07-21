@@ -28,6 +28,7 @@ public class LoginPage extends AbstractPage {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
         setUiLoadedMarker(loginButton);
+        setPageAbsoluteURL(R.CONFIG.get("url"));
     }
 
     public boolean isLoginButtonDisplayed() {
