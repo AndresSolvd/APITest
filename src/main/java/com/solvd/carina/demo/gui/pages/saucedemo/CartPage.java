@@ -24,7 +24,6 @@ public class CartPage extends AbstractPage {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
         setUiLoadedMarker(pageTitleLabel);
-//        setPageAbsoluteURL(R.CONFIG.get("url"));
     }
 
     public boolean isProductDisplayed(String productName) {

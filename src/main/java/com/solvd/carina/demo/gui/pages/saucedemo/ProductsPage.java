@@ -29,7 +29,6 @@ public class ProductsPage extends AbstractPage {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
         setUiLoadedMarker(pageTitleLabel);
-//        setPageAbsoluteURL(R.CONFIG.get("url"));
     }
 
     public List<CatalogProductItem> getProductItems() {

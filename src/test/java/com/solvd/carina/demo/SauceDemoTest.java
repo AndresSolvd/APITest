@@ -15,7 +15,7 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
 
     @Test
     @MethodOwner(owner = "Andres")
-    public void LoginTest() {
+    public void loginTest() {
         String username = R.TESTDATA.get("standard_username");
         String password = R.TESTDATA.get("standard_password");
 
