@@ -1,6 +1,7 @@
 package com.solvd.carina.demo.gui.saucedemo;
 
 import com.solvd.carina.demo.gui.saucedemo.components.CatalogProductItem;
+import com.solvd.carina.demo.gui.saucedemo.components.LeftSideMenu;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
@@ -26,13 +27,10 @@ public class ProductsPage extends AbstractPage {
     private List<CatalogProductItem> products;
 
     @FindBy(xpath = "//button[@id='react-burger-menu-btn']")
-    private ExtendedWebElement hamburgerMenuButton;
+    private ExtendedWebElement hamburgerButtonToDisplayLeftSideMenu;
 
-    @FindBy(xpath = "//a[@id='about_sidebar_link' and @href='https://saucelabs.com/' ]")
-    private ExtendedWebElement aboutButtonInHamburgerMenu;
-
-    @FindBy(xpath = "//a [@id='logout_sidebar_link']")
-    private ExtendedWebElement logOutButtonInHamburgerMenu;
+    @FindBy(xpath = "//div[@class='bm-menu']")
+    private LeftSideMenu leftSideMenu;
 
     protected ProductsPage(WebDriver driver) {
         super(driver);
@@ -40,18 +38,12 @@ public class ProductsPage extends AbstractPage {
         setUiLoadedMarker(pageTitleLabel);
     }
 
-    public LoginPage clickLogOutButtonInHamburgerMenu() {
-        logOutButtonInHamburgerMenu.click();
-        return new LoginPage(driver);
-    }
-
-    public AboutPage clickAboutButtonInHamburgerMenu() {
-        aboutButtonInHamburgerMenu.click();
-        return new AboutPage(driver);
-    }
-
     public void clickHamburgerMenu() {
-        hamburgerMenuButton.click();
+        hamburgerButtonToDisplayLeftSideMenu.click();
+    }
+
+    public LeftSideMenu getLeftSideMenu() {
+        return leftSideMenu;
     }
 
     public List<CatalogProductItem> getProductItems() {

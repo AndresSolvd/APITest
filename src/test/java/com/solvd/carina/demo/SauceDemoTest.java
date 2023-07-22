@@ -2,7 +2,7 @@ package com.solvd.carina.demo;
 
 import com.solvd.carina.demo.gui.saucedemo.*;
 import com.solvd.carina.demo.gui.saucedemo.components.CatalogProductItem;
-import com.solvd.carina.demo.utils.AuthUtils;
+import com.solvd.carina.demo.gui.saucedemo.components.LeftSideMenu;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.utils.R;
 import org.testng.Assert;
@@ -49,11 +49,12 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
 
     @Test
     @MethodOwner(owner = "Andres")
-    public void aboutButtonInHamburgerMenuTest() {
+    public void aboutButtonInHamburgerMenuTest() throws InterruptedException {
         ProductsPage productsPage = authUtils.loginStandardUser();
         Assert.assertTrue(productsPage.isPageOpened(), "Product page is not opened");
         productsPage.clickHamburgerMenu();
-        AboutPage aboutPage = productsPage.clickAboutButtonInHamburgerMenu();
+        LeftSideMenu leftSideMenu = productsPage.getLeftSideMenu();
+        AboutPage aboutPage = leftSideMenu.clickAboutButtonInLeftSideMenu();
         Assert.assertTrue(aboutPage.isPageOpened(), "About Page is not opened");
     }
 
@@ -62,7 +63,8 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
     public void logOutButtonInHamburgerMenuTest() {
         ProductsPage productsPage = authUtils.loginStandardUser();
         productsPage.clickHamburgerMenu();
-        LoginPage loginPage = productsPage.clickLogOutButtonInHamburgerMenu();
+        LeftSideMenu leftSideMenu = productsPage.getLeftSideMenu();
+        LoginPage loginPage = leftSideMenu.clickLogOutButtonInLeftSideMenu();
         Assert.assertTrue(loginPage.isPageOpened(), "LogIn page is not opened after clicking LogOut");
     }
 
