@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class AboutPage extends AbstractPage {
 
-    @FindBy(xpath = "//title[contains(text(),'Sauce Labs: Cross Browser Testing, Selenium Testing & Mobile Testing')]")
+    @FindBy(xpath = "//img[@src='/images/logo.svg']")
     private ExtendedWebElement pageTitle;
 
     public AboutPage(WebDriver driver) {

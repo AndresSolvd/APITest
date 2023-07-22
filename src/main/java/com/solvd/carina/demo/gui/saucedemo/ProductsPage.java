@@ -1,6 +1,5 @@
 package com.solvd.carina.demo.gui.saucedemo;
 
-import com.solvd.carina.demo.gui.saucedemo.components.BurgerMenu;
 import com.solvd.carina.demo.gui.saucedemo.components.CatalogProductItem;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
@@ -26,8 +25,11 @@ public class ProductsPage extends AbstractPage {
     @FindBy(xpath = "//div[@class='inventory_item']")
     private List<CatalogProductItem> products;
 
-    @FindBy(xpath ="//button[@id='react-burger-menu-btn']")
-    private ExtendedWebElement burgerMenu;
+    @FindBy(xpath = "//button[@id='react-burger-menu-btn']")
+    private ExtendedWebElement burgerMenuButton;
+
+    @FindBy(xpath = "//a[@id='about_sidebar_link' and @href='https://saucelabs.com/' ]")
+    private ExtendedWebElement aboutButtonInHamburgerMenu;
 
     protected ProductsPage(WebDriver driver) {
         super(driver);
@@ -35,8 +37,13 @@ public class ProductsPage extends AbstractPage {
         setUiLoadedMarker(pageTitleLabel);
     }
 
+    public AboutPage clickAboutButtonInHamburgerMenu() {
+        aboutButtonInHamburgerMenu.click();
+        return new AboutPage(driver);
+    }
+
     public void clickBurgerMenu() {
-        burgerMenu.click();
+        burgerMenuButton.click();
     }
 
     public List<CatalogProductItem> getProductItems() {

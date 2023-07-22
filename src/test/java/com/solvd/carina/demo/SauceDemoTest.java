@@ -4,7 +4,6 @@ import com.solvd.carina.demo.gui.saucedemo.AboutPage;
 import com.solvd.carina.demo.gui.saucedemo.CartPage;
 import com.solvd.carina.demo.gui.saucedemo.LoginPage;
 import com.solvd.carina.demo.gui.saucedemo.ProductsPage;
-import com.solvd.carina.demo.gui.saucedemo.components.BurgerMenu;
 import com.solvd.carina.demo.gui.saucedemo.components.CatalogProductItem;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.utils.R;
@@ -55,7 +54,8 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
     public void aboutButtonInHamburgerMenuTest() {
         ProductsPage productsPage = authUtils.loginStandardUser();
         Assert.assertTrue(productsPage.isPageOpened(), "Product page is not opened");
-        AboutPage aboutPage= productsPage.clickBurgerMenu().clickAboutButtonInHamburgerMenu();
+        productsPage.clickBurgerMenu();
+        AboutPage aboutPage= productsPage.clickAboutButtonInHamburgerMenu();
         Assert.assertTrue(aboutPage.isPageOpened(), "About Page is not opened");
     }
 
