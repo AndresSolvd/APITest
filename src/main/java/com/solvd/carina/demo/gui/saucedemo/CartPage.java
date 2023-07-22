@@ -20,6 +20,9 @@ public class CartPage extends AbstractPage {
     @FindBy(xpath = "//div[@class='inventory_item_name'][text()='%s']")
     private ExtendedWebElement productTitle;
 
+    @FindBy(xpath = "//button[@data-test='checkout']")
+    private ExtendedWebElement checkOutButton;
+
     protected CartPage(WebDriver driver) {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
@@ -29,5 +32,10 @@ public class CartPage extends AbstractPage {
     public boolean isProductDisplayed(String productName) {
         LOGGER.info("Will verify if product with title: " + productName + " is displayed");
         return productTitle.format(productName).isElementPresent();
+    }
+
+    public CheckOutYourInformationPage clickCheckOutButton() {
+        checkOutButton.click();
+        return new CheckOutYourInformationPage(driver);
     }
 }

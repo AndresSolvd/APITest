@@ -1,10 +1,8 @@
 package com.solvd.carina.demo;
 
-import com.solvd.carina.demo.gui.saucedemo.AboutPage;
-import com.solvd.carina.demo.gui.saucedemo.CartPage;
-import com.solvd.carina.demo.gui.saucedemo.LoginPage;
-import com.solvd.carina.demo.gui.saucedemo.ProductsPage;
+import com.solvd.carina.demo.gui.saucedemo.*;
 import com.solvd.carina.demo.gui.saucedemo.components.CatalogProductItem;
+import com.solvd.carina.demo.utils.AuthUtils;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.utils.R;
 import org.testng.Assert;
@@ -66,5 +64,17 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
         productsPage.clickHamburgerMenu();
         LoginPage loginPage = productsPage.clickLogOutButtonInHamburgerMenu();
         Assert.assertTrue(loginPage.isPageOpened(), "LogIn page is not opened after clicking LogOut");
+    }
+
+    @Test
+    @MethodOwner(owner = "Andres")
+    public void checkoutButtonInCartPage() {
+        ProductsPage productsPage = authUtils.loginStandardUser();
+        Assert.assertTrue(productsPage.isPageOpened(), "Product Page is not opened");
+        CartPage cartPage = productsPage.clickCartButton();
+        Assert.assertTrue(cartPage.isPageOpened(), "CartPage is not opened");
+        CheckOutYourInformationPage checkOutYourInformationPage = cartPage.clickCheckOutButton();
+        Assert.assertTrue(checkOutYourInformationPage.isPageOpened(),
+                "The CheckOut page(Information) is not opened");
     }
 }
