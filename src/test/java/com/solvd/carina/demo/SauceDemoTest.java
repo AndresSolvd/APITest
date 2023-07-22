@@ -54,9 +54,17 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
     public void aboutButtonInHamburgerMenuTest() {
         ProductsPage productsPage = authUtils.loginStandardUser();
         Assert.assertTrue(productsPage.isPageOpened(), "Product page is not opened");
-        productsPage.clickBurgerMenu();
-        AboutPage aboutPage= productsPage.clickAboutButtonInHamburgerMenu();
+        productsPage.clickHamburgerMenu();
+        AboutPage aboutPage = productsPage.clickAboutButtonInHamburgerMenu();
         Assert.assertTrue(aboutPage.isPageOpened(), "About Page is not opened");
     }
 
+    @Test
+    @MethodOwner(owner = "Andres")
+    public void logOutButtonInHamburgerMenuTest() {
+        ProductsPage productsPage = authUtils.loginStandardUser();
+        productsPage.clickHamburgerMenu();
+        LoginPage loginPage = productsPage.clickLogOutButtonInHamburgerMenu();
+        Assert.assertTrue(loginPage.isPageOpened(), "LogIn page is not opened after clicking LogOut");
+    }
 }

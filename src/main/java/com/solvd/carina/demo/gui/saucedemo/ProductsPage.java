@@ -26,10 +26,13 @@ public class ProductsPage extends AbstractPage {
     private List<CatalogProductItem> products;
 
     @FindBy(xpath = "//button[@id='react-burger-menu-btn']")
-    private ExtendedWebElement burgerMenuButton;
+    private ExtendedWebElement hamburgerMenuButton;
 
     @FindBy(xpath = "//a[@id='about_sidebar_link' and @href='https://saucelabs.com/' ]")
     private ExtendedWebElement aboutButtonInHamburgerMenu;
+
+    @FindBy(xpath = "//a [@id='logout_sidebar_link']")
+    private ExtendedWebElement logOutButtonInHamburgerMenu;
 
     protected ProductsPage(WebDriver driver) {
         super(driver);
@@ -37,13 +40,18 @@ public class ProductsPage extends AbstractPage {
         setUiLoadedMarker(pageTitleLabel);
     }
 
+    public LoginPage clickLogOutButtonInHamburgerMenu() {
+        logOutButtonInHamburgerMenu.click();
+        return new LoginPage(driver);
+    }
+
     public AboutPage clickAboutButtonInHamburgerMenu() {
         aboutButtonInHamburgerMenu.click();
         return new AboutPage(driver);
     }
 
-    public void clickBurgerMenu() {
-        burgerMenuButton.click();
+    public void clickHamburgerMenu() {
+        hamburgerMenuButton.click();
     }
 
     public List<CatalogProductItem> getProductItems() {
