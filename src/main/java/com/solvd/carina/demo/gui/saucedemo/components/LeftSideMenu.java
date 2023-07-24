@@ -17,22 +17,22 @@ public class LeftSideMenu extends AbstractUIObject {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @FindBy(xpath = ".//a[@id='about_sidebar_link']")
-    private ExtendedWebElement aboutButtonInLeftSideMenu;
+    private ExtendedWebElement aboutButton;
 
     @FindBy(xpath = ".//a[@id='logout_sidebar_link']")
-    private ExtendedWebElement logOutButtonInLeftSideMenu;
+    private ExtendedWebElement logOutButton;
 
     public LeftSideMenu(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 
-    public LoginPage clickLogOutButtonInLeftSideMenu() {
-        logOutButtonInLeftSideMenu.click();
+    public LoginPage clickLogOutButton() {
+        logOutButton.click();
         return new LoginPage(driver);
     }
 
-    public AboutPage clickAboutButtonInLeftSideMenu() {
-        aboutButtonInLeftSideMenu.click();
+    public AboutPage clickAboutButton() {
+        aboutButton.click();
         return new AboutPage(driver);
     }
 }

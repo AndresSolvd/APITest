@@ -17,8 +17,15 @@
 	<test name="GSM arena web tests">
 		<classes>
 			<class name="com.solvd.carina.demo.WebSampleTest" />
-			<class name="com.solvd.carina.demo.SauceDemoTest"/>
+			<class name="com.solvd.carina.demo.SauceDemoTest">
+				<methods>
+					<include name="loginTest"/>
+					<include name="productAddedToTheCartTest"/>
+					<include name="aboutButtonInHamburgerMenuTest"/>
+					<include name="logOutButtonInHamburgerMenuTest"/>
+					<include name="checkoutButtonInCartPage"/>
+				</methods>
+			</class>
 		</classes>
 	</test>
-
 </suite>

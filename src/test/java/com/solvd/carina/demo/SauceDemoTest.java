@@ -24,7 +24,7 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
         loginPage.typeUsername(username);
         loginPage.typePassword(password);
         ProductsPage productsPage = loginPage.clickLoginButton();
-        productsPage.assertPageOpened();
+        Assert.assertTrue(productsPage.isPageOpened(), "Product page is not opened");
     }
 
     @Test
@@ -33,7 +33,7 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
         String productTitle = R.TESTDATA.get("product_name");
 
         ProductsPage productsPage = authUtils.loginStandardUser();
-        productsPage.assertPageOpened();
+        Assert.assertTrue(productsPage.isPageOpened(), "Product page is not opened");
         List<CatalogProductItem> productItems = productsPage.getProductItems();
 
         for (CatalogProductItem productItem : productItems) {
@@ -43,7 +43,7 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
         }
 
         CartPage cartPage = productsPage.clickCartButton();
-        cartPage.assertPageOpened();
+        Assert.assertTrue(cartPage.isPageOpened(), "CartPage page is not opened");
         Assert.assertTrue(cartPage.isProductDisplayed(productTitle), "Product title is not displayed in the cart");
     }
 
@@ -51,11 +51,11 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
     @MethodOwner(owner = "Andres")
     public void aboutButtonInHamburgerMenuTest() throws InterruptedException {
         ProductsPage productsPage = authUtils.loginStandardUser();
-        productsPage.assertPageOpened();
+        Assert.assertTrue(productsPage.isPageOpened(), "Product page is not opened");
         productsPage.clickHamburgerMenu();
         LeftSideMenu leftSideMenu = productsPage.getLeftSideMenu();
-        AboutPage aboutPage = leftSideMenu.clickAboutButtonInLeftSideMenu();
-        aboutPage.assertPageOpened();
+        AboutPage aboutPage = leftSideMenu.clickAboutButton();
+        Assert.assertTrue(aboutPage.isPageOpened(), "AboutPage page is not opened");
     }
 
     @Test
@@ -64,8 +64,8 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
         ProductsPage productsPage = authUtils.loginStandardUser();
         productsPage.clickHamburgerMenu();
         LeftSideMenu leftSideMenu = productsPage.getLeftSideMenu();
-        LoginPage loginPage = leftSideMenu.clickLogOutButtonInLeftSideMenu();
-        loginPage.assertPageOpened();
+        LoginPage loginPage = leftSideMenu.clickLogOutButton();
+        Assert.assertTrue(loginPage.isPageOpened(), "LoginPage page is not opened");
     }
 
     @Test
@@ -74,8 +74,8 @@ public class SauceDemoTest extends AbstractSauceDemoTest {
         ProductsPage productsPage = authUtils.loginStandardUser();
         productsPage.assertPageOpened();
         CartPage cartPage = productsPage.clickCartButton();
-        cartPage.assertPageOpened();
+        Assert.assertTrue(cartPage.isPageOpened(), "CartPage page is not opened");
         CheckOutYourInformationPage checkOutYourInformationPage = cartPage.clickCheckOutButton();
-        checkOutYourInformationPage.assertPageOpened();
+        Assert.assertTrue(checkOutYourInformationPage.isPageOpened(), "CheckOutYourInformationPage page is not opened");
     }
 }
