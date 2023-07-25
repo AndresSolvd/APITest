@@ -24,6 +24,7 @@
 					<include name="aboutButtonInHamburgerMenuTest"/>
 					<include name="logOutButtonInHamburgerMenuTest"/>
 					<include name="checkoutButtonInCartPage"/>
+					<include name="checkOutTest"/>
 				</methods>
 			</class>
 		</classes>
