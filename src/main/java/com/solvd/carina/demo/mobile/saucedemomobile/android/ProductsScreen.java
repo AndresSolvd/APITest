@@ -35,11 +35,9 @@ public class ProductsScreen extends ProductsScreenBase {
 //    @FindBy(xpath = "//div[@class='bm-menu']")
 //    private LeftSideMenu leftSideMenu;
 //
-//    protected ProductsScreen(WebDriver driver) {
-//        super(driver);
-//        setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
-//        setUiLoadedMarker(pageTitleLabel);
-//    }
+    protected ProductsScreen(WebDriver driver) {
+        super(driver);
+    }
 
     public boolean isOpened() {
         return screenTitle.isElementPresent();
