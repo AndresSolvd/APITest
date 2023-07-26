@@ -1,9 +1,10 @@
-package com.solvd.carina.demo.mobile.saucedemomobile;
+package com.solvd.carina.demo.mobile.saucedemomobile.android;
 
-import com.zebrunner.carina.utils.R;
+import com.solvd.carina.demo.mobile.saucedemomobile.common.LoginScreenBase;
+import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductsScreenBase;
+import com.zebrunner.carina.utils.factory.DeviceType;
+import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
-import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
@@ -11,7 +12,8 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
 
-public class LoginScreen extends AbstractPage {
+@DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = LoginScreenBase.class)
+public class LoginScreen extends LoginScreenBase implements IMobileUtils {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
@@ -26,25 +28,26 @@ public class LoginScreen extends AbstractPage {
 
     public LoginScreen(WebDriver driver) {
         super(driver);
-        setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
-        setUiLoadedMarker(loginButton);
-        setPageAbsoluteURL(R.CONFIG.get("url"));
     }
 
-    public boolean isLoginButtonDisplayed() {
+    @Override
+    public boolean isOpened() {
         return loginButton.isElementPresent();
     }
 
+    @Override
     public void typeUsername(String username) {
         usernameField.type(username);
     }
 
+    @Override
     public void typePassword(String password) {
         passwordField.type(password);
     }
 
-    public ProductsScreen clickLoginButton() {
+    @Override
+    public ProductsScreenBase clickLoginButton() {
         loginButton.click();
-        return initPage(ProductsScreen.class);
+        return initPage(ProductsScreenBase.class);
     }
 }

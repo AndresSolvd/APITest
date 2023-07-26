@@ -1,7 +1,7 @@
 package com.solvd.carina.demo.mobile.saucedemomobile.components;
 
 import com.solvd.carina.demo.mobile.saucedemomobile.AboutScreen;
-import com.solvd.carina.demo.mobile.saucedemomobile.LoginScreen;
+import com.solvd.carina.demo.mobile.saucedemomobile.android.LoginScreen;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
