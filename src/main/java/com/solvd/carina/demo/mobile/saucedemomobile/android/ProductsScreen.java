@@ -28,7 +28,7 @@ public class ProductsScreen extends ProductsScreenBase {
     private ExtendedWebElement productTitleS;
 
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Menu\"]/android.view.ViewGroup/android.widget.ImageView")
-    private ExtendedWebElement leftSideMenu;
+    private ExtendedWebElement hamburgerMenuButtonToGetLeftSideMenu;
 
     public ProductsScreen(WebDriver driver) {
         super(driver);
@@ -40,8 +40,8 @@ public class ProductsScreen extends ProductsScreenBase {
     }
 
     @Override
-    public LeftSideMenuScreenBase getLeftSideMenu() {
-        leftSideMenu.click();
+    public LeftSideMenuScreenBase clickHamburgerMenuToGetLeftSideMenu() {
+        hamburgerMenuButtonToGetLeftSideMenu.click();
         return initPage(LeftSideMenuScreenBase.class);
     }
 

@@ -8,7 +8,7 @@ public abstract class ProductsScreenBase extends AbstractSauceDemoScreenBase {
         super(driver);
     }
 
-    public abstract LeftSideMenuScreenBase getLeftSideMenu();
+    public abstract LeftSideMenuScreenBase clickHamburgerMenuToGetLeftSideMenu();
 
     public abstract ProductDetailsScreenBase clickProductTitle(String productTitle);
 
