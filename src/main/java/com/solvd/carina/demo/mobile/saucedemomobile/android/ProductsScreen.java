@@ -4,7 +4,6 @@ import com.solvd.carina.demo.mobile.saucedemomobile.common.CartScreenBase;
 import com.solvd.carina.demo.mobile.saucedemomobile.common.LeftSideMenuScreenBase;
 import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductDetailsScreenBase;
 import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductsScreenBase;
-import com.solvd.carina.demo.mobile.saucedemomobile.components.CatalogProductItem;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
-import java.util.List;
 
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = ProductsScreenBase.class)
 public class ProductsScreen extends ProductsScreenBase {
