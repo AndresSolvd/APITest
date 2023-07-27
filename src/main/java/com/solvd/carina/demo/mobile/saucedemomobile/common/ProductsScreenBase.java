@@ -1,8 +1,6 @@
 package com.solvd.carina.demo.mobile.saucedemomobile.common;
 
-import com.solvd.carina.demo.mobile.saucedemomobile.android.ProductDetailsScreen;
 import org.openqa.selenium.WebDriver;
-
 
 public abstract class ProductsScreenBase extends AbstractSauceDemoScreenBase {
 
