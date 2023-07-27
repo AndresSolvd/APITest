@@ -45,7 +45,7 @@ public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
 
     @Test
     @MethodOwner(owner = "Andres")
-    public void logOutButtonInHamburgerMenuTest() {
+    public void logOutTest() {
         // Log In
         ProductsScreenBase productsScreenBase = authUtilsScreen.loginStandardUser();
         Assert.assertTrue(productsScreenBase.isOpened(), "Products screen is not opened");
@@ -56,12 +56,12 @@ public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
 
         // Click Log Out
         LoginScreenBase loginScreenBase = leftSideMenuScreenBase.clickLogOutButton();
-        Assert.assertTrue(loginScreenBase.isPageOpened(), "Login Screen is not opened");
+        Assert.assertTrue(loginScreenBase.isOpened(), "Login Screen is not opened");
     }
 
     @Test
     @MethodOwner(owner = "Andres")
-    public void checkoutButtonInCartPage() {
+    public void checkOutProcessTest() {
         String productTitle = R.TESTDATA.get("second_product_name");
         String firstName = R.TESTDATA.get("first_name");
         String lastName = R.TESTDATA.get("last_name");
@@ -94,7 +94,7 @@ public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
 
         // Go to Overview Screen
         OverviewScreenBase overviewScreenBase = checkOutYourInformationScreenBase.clickContinue();
-//        Assert.assertTrue(overviewScreenBase.isOpened(),"Overview screen is not opened");
+        Assert.assertTrue(overviewScreenBase.isOpened(),"Overview screen is not opened");
 
         // Click Finish
         ThankYouScreenBase thankYouScreenBase = overviewScreenBase.clickFinish();

@@ -13,7 +13,7 @@ public class ThankYouScreen extends ThankYouScreenBase {
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-BACK HOME\"]")
     private ExtendedWebElement backHomeButton;
 
-    protected ThankYouScreen(WebDriver driver) {
+    public ThankYouScreen(WebDriver driver) {
         super(driver);
     }
 
