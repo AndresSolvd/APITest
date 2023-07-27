@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class ProductsScreenBase extends AbstractSauceDemoScreenBase {
 
-    protected ProductsScreenBase(WebDriver driver) {
+    public ProductsScreenBase(WebDriver driver) {
         super(driver);
     }
 

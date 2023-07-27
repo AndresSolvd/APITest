@@ -1,7 +1,5 @@
 package com.solvd.carina.demo;
 
-import com.solvd.carina.demo.mobile.saucedemomobile.android.CartScreen;
-import com.solvd.carina.demo.mobile.saucedemomobile.android.ProductDetailsScreen;
 import com.solvd.carina.demo.mobile.saucedemomobile.common.CartScreenBase;
 import com.solvd.carina.demo.mobile.saucedemomobile.common.LoginScreenBase;
 import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductDetailsScreenBase;
@@ -9,7 +7,6 @@ import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductsScreenBase;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.utils.R;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -31,7 +28,7 @@ public class SauceDemoMobileTest implements IAbstractTest {
     @Test
     @MethodOwner(owner = "Andres")
     public void productAddedToTheCartTest() {
-        String productTitle = R.TESTDATA.get("product_name");
+        String productTitle = R.TESTDATA.get("second_product_name");
         String username = R.TESTDATA.get("standard_username");
         String password = R.TESTDATA.get("standard_password");
 

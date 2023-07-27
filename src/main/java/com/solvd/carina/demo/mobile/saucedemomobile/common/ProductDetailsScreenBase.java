@@ -3,6 +3,7 @@ package com.solvd.carina.demo.mobile.saucedemomobile.common;
 import org.openqa.selenium.WebDriver;
 
 public abstract class ProductDetailsScreenBase extends AbstractSauceDemoScreenBase {
+
     public ProductDetailsScreenBase(WebDriver driver) {
         super(driver);
     }

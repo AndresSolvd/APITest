@@ -17,7 +17,7 @@ public class CheckOutYourInformationScreen extends CheckOutYourInformationScreen
             "android.view.ViewGroup[2]/android.widget.TextView")
     private ExtendedWebElement screenTitle;
 
-    protected CheckOutYourInformationScreen(WebDriver driver) {
+    public CheckOutYourInformationScreen(WebDriver driver) {
         super(driver);
     }
 

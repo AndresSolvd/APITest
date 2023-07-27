@@ -5,6 +5,7 @@ import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductDetailsScreenB
 import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductsScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
+import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -18,8 +19,9 @@ public class ProductDetailsScreen extends ProductDetailsScreenBase {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    @FindBy(id = "00000000-0000-0074-ffff-ffff000001a9")
-    private ExtendedWebElement productTitle;
+    //    @ExtendedFindBy(accessibilityId = "test-BACK TO PRODUCTS")
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-BACK TO PRODUCTS\"]")
+    private ExtendedWebElement backToProductButton;
 
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"]")
     private ExtendedWebElement addToCartButton;
@@ -27,17 +29,18 @@ public class ProductDetailsScreen extends ProductDetailsScreenBase {
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Cart\"]")
     private ExtendedWebElement cartButton;
 
-    public ProductDetailsScreen(WebDriver driver, SearchContext searchContext) {
+    public ProductDetailsScreen(WebDriver driver) {
         super(driver);
     }
 
     @Override
     public boolean isOpened() {
-        return productTitle.isElementPresent();
+        return backToProductButton.isElementPresent();
     }
 
     @Override
     public void clickAddToCardButton() {
+        swipe(addToCartButton);
         addToCartButton.click();
     }
 
