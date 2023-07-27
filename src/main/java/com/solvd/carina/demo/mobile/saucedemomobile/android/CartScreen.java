@@ -1,6 +1,7 @@
 package com.solvd.carina.demo.mobile.saucedemomobile.android;
 
 import com.solvd.carina.demo.mobile.saucedemomobile.common.CartScreenBase;
+import com.solvd.carina.demo.mobile.saucedemomobile.common.CheckOutYourInformationScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
@@ -44,8 +45,8 @@ public class CartScreen extends CartScreenBase {
     }
 
     @Override
-    public CheckOutYourInformationScreen clickCheckOutButton() {
+    public CheckOutYourInformationScreenBase clickCheckOutButton() {
         checkOutButton.click();
-        return initPage(CheckOutYourInformationScreen.class);
+        return initPage(CheckOutYourInformationScreenBase.class);
     }
 }

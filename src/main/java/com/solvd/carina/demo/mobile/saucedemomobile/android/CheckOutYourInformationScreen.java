@@ -10,25 +10,20 @@ import org.openqa.selenium.support.FindBy;
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = CheckOutYourInformationScreenBase.class)
 public class CheckOutYourInformationScreen extends CheckOutYourInformationScreenBase {
 
-    @FindBy(xpath = "")
-    private ExtendedWebElement firstName;
-
-    @FindBy(xpath = "")
-    private ExtendedWebElement lastName;
-
-    @FindBy(xpath = "")
-    private ExtendedWebElement zipCode;
-
-    @FindBy(xpath = "")
-    private ExtendedWebElement continueButton;
-
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/" +
-            "android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/" +
-            "android.view.ViewGroup/android.view.ViewGroup/" +
-            "android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/" +
-            "android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/" +
-            "android.view.ViewGroup[2]/android.widget.TextView")
+    @FindBy(xpath = "//android.widget.TextView[@text='CHECKOUT: INFORMATION']")
     private ExtendedWebElement screenTitle;
+
+    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"test-First Name\"]")
+    private ExtendedWebElement firstNameField;
+
+    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"test-Last Name\"]")
+    private ExtendedWebElement lastNameField;
+
+    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"test-Zip/Postal Code\"]")
+    private ExtendedWebElement zipCodeField;
+
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-CONTINUE\"]/android.widget.TextView")
+    private ExtendedWebElement continueButton;
 
     public CheckOutYourInformationScreen(WebDriver driver) {
         super(driver);
@@ -41,19 +36,17 @@ public class CheckOutYourInformationScreen extends CheckOutYourInformationScreen
 
     @Override
     public void typeFirstName(String firstName) {
-        this.firstName.type(firstName);
-
+        firstNameField.type(firstName);
     }
 
     @Override
     public void typeLastName(String lastName) {
-        this.lastName.type(lastName);
-
+        lastNameField.type(lastName);
     }
 
     @Override
-    public void typeZipcode(String zip) {
-        this.zipCode.type(zip);
+    public void typeZipcode(String zipCode) {
+        zipCodeField.type(zipCode);
     }
 
     @Override

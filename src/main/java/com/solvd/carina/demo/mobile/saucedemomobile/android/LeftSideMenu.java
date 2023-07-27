@@ -4,7 +4,6 @@ import com.solvd.carina.demo.mobile.saucedemomobile.common.LeftSideMenuScreenBas
 import com.solvd.carina.demo.mobile.saucedemomobile.common.LoginScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
@@ -20,11 +19,10 @@ public class LeftSideMenu extends LeftSideMenuScreenBase {
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Close\"]/android.widget.ImageView")
     private ExtendedWebElement closeMenuButton;
 
-    @FindBy(xpath = "//android.widget.ScrollView[@content-desc=\"test-Checkout: Your Info\"]" +
-            "/android.view.ViewGroup/android.view.ViewGroup[5]")
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-LOGOUT\"]/android.widget.TextView")
     private ExtendedWebElement logOutButton;
 
-    public LeftSideMenu(WebDriver driver, SearchContext searchContext) {
+    public LeftSideMenu(WebDriver driver) {
         super(driver);
     }
 

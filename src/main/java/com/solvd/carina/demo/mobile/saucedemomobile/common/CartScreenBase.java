@@ -11,5 +11,5 @@ public abstract class CartScreenBase extends AbstractSauceDemoScreenBase {
 
     public abstract boolean isProductDisplayed(String productName);
 
-    public abstract CheckOutYourInformationScreen clickCheckOutButton();
+    public abstract CheckOutYourInformationScreenBase clickCheckOutButton();
 }

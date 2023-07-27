@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class LeftSideMenuScreenBase extends AbstractSauceDemoScreenBase {
 
-    protected LeftSideMenuScreenBase(WebDriver driver) {
+    public LeftSideMenuScreenBase(WebDriver driver) {
         super(driver);
     }
 

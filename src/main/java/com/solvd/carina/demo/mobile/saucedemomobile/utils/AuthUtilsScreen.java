@@ -8,7 +8,6 @@ import com.zebrunner.carina.utils.factory.ICustomTypePageFactory;
 public class AuthUtilsScreen implements ICustomTypePageFactory{
     public ProductsScreenBase login(String username, String password) {
         LoginScreenBase loginScreenBase = initPage(LoginScreenBase.class);
-        loginScreenBase.open();
         loginScreenBase.typeUsername(username);
         loginScreenBase.typePassword(password);
         return loginScreenBase.clickLoginButton();

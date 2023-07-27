@@ -5,5 +5,5 @@ import com.zebrunner.carina.core.IAbstractTest;
 
 public abstract class AbstractSauceDemoScreenTest implements IAbstractTest {
 
-    AuthUtilsScreen authUtilsscreen = new AuthUtilsScreen();
+    AuthUtilsScreen authUtilsScreen = new AuthUtilsScreen();
 }
