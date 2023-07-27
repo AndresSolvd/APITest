@@ -1,5 +1,9 @@
 package com.solvd.carina.demo;
 
+import com.solvd.carina.demo.gui.saucedemo.CartPage;
+import com.solvd.carina.demo.gui.saucedemo.CheckOutYourInformationPage;
+import com.solvd.carina.demo.gui.saucedemo.ProductsPage;
+import com.solvd.carina.demo.gui.saucedemo.components.CatalogProductItem;
 import com.solvd.carina.demo.gui.saucedemo.components.LeftSideMenu;
 import com.solvd.carina.demo.mobile.saucedemomobile.common.*;
 import com.zebrunner.carina.core.IAbstractTest;
@@ -7,6 +11,8 @@ import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.utils.R;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
 
@@ -65,6 +71,9 @@ public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
     @MethodOwner(owner = "Andres")
     public void checkoutButtonInCartPage() {
         String productTitle = R.TESTDATA.get("second_product_name");
+        String firstName = R.TESTDATA.get("first_name");
+        String lastName = R.TESTDATA.get("last_name");
+        String zip = R.TESTDATA.get("zip");
 
         // Log In
         ProductsScreenBase productsScreenBase = authUtilsscreen.loginStandardUser();
@@ -80,11 +89,27 @@ public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
         // Go to Cart screen and verify product has been added
         CartScreenBase cartScreenBase = productDetailsScreenBase.clickCartButton();
         Assert.assertTrue(cartScreenBase.isOpened(), "Cart screen is not opened");
-        Assert.assertTrue(cartScreenBase.isProductDisplayed(productTitle), "Added product is not in the cart");
+        Assert.assertTrue(cartScreenBase.isProductDisplayed(productTitle), "Product is not in the cart");
 
         // CLick Check Out Button
         CheckOutYourInformationScreenBase checkOutYourInformationScreenBase = cartScreenBase.clickCheckOutButton();
         Assert.assertTrue(checkOutYourInformationScreenBase.isOpened(), "The information Page is not opened");
 
+        // Input information required data
+        checkOutYourInformationScreenBase.typeFirstName(firstName);
+        checkOutYourInformationScreenBase.typeLastName(lastName);
+        checkOutYourInformationScreenBase.typeZipcode(zip);
+
+        // Go to Overview Screen
+        OverviewScreenBase overviewScreenBase = checkOutYourInformationScreenBase.clickContinue();
+        Assert.assertTrue(overviewScreenBase.isOpened(),"Over View screen is not opened");
+
+        // Click Finish
+        ThankYouScreenBase thankYouScreenBase = overviewScreenBase.clickFinish();
+        Assert.assertTrue(thankYouScreenBase.isOpened(), " Thank You screen is not opened");
+
+        // Back to Product Screen
+        ProductsScreenBase productScreenBase = thankYouScreenBase.clickBackHomeButton();
+        Assert.assertTrue(productScreenBase.isOpened(), "Product Page is not opened");
     }
 }
