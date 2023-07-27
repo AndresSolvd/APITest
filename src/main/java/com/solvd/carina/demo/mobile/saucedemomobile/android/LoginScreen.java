@@ -23,7 +23,7 @@ public class LoginScreen extends LoginScreenBase implements IMobileUtils {
     @FindBy(xpath = "//android.widget.EditText[@content-desc=\"test-Password\"]")
     private ExtendedWebElement passwordField;
 
-    @FindBy(css = "//android.view.ViewGroup[@content-desc='test-LOGIN']")
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc='test-LOGIN']")
     private ExtendedWebElement loginButton;
 
     public LoginScreen(WebDriver driver) {
