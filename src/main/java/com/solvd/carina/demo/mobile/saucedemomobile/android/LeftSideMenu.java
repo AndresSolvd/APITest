@@ -16,10 +16,10 @@ public class LeftSideMenu extends LeftSideMenuScreenBase {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Close\"]/android.widget.ImageView")
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Close\"]")
     private ExtendedWebElement closeMenuButton;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-LOGOUT\"]/android.widget.TextView")
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-LOGOUT\"]")
     private ExtendedWebElement logOutButton;
 
     public LeftSideMenu(WebDriver driver) {

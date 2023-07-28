@@ -16,11 +16,7 @@ public class CartScreen extends CartScreenBase {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/" +
-            "android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/" +
-            "android.view.ViewGroup/android.view.ViewGroup/" +
-            "android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/" +
-            "android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView")
+    @FindBy(xpath = "//android.view.ViewGroup/android.widget.TextView[@text='YOUR CART']")
     private ExtendedWebElement screenTitle;
 
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Description\"]/android.widget.TextView[@text='%s']")
