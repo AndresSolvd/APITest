@@ -19,8 +19,7 @@ public class ProductDetailsScreen extends ProductDetailsScreenBase {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    //    @ExtendedFindBy(accessibilityId = "test-BACK TO PRODUCTS")
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-BACK TO PRODUCTS\"]")
+    @ExtendedFindBy(accessibilityId = "test-BACK TO PRODUCTS")
     private ExtendedWebElement backToProductButton;
 
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"]")

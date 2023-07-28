@@ -27,18 +27,14 @@ public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
     public void productAddedToTheCartTest() {
         String productTitle = R.TESTDATA.get("second_product_name");
 
-        // Log In
         ProductsScreenBase productsScreenBase = mobileAuthUtils.loginStandardUser();
         Assert.assertTrue(productsScreenBase.isOpened(), "Products screen is not opened");
 
-        // Go to Product screen
         ProductDetailsScreenBase productDetailsScreenBase = productsScreenBase.clickProductTitle(productTitle);
         Assert.assertTrue(productDetailsScreenBase.isOpened(), "Product details screen is not opened");
 
-        // Add the product to the cart
         productDetailsScreenBase.clickAddToCardButton();
 
-        // Go to Cart screen and verify product has been added
         CartScreenBase cartScreenBase = productDetailsScreenBase.clickCartButton();
         Assert.assertTrue(cartScreenBase.isOpened(), "Cart screen is not opened");
         Assert.assertTrue(cartScreenBase.isProductDisplayed(productTitle), "Added product is not in the cart");
@@ -47,15 +43,12 @@ public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
     @Test
     @MethodOwner(owner = "Andres")
     public void logOutTest() {
-        // Log In
         ProductsScreenBase productsScreenBase = mobileAuthUtils.loginStandardUser();
         Assert.assertTrue(productsScreenBase.isOpened(), "Products screen is not opened");
 
-        // Go to LeftSide Menu
         LeftSideMenuScreenBase leftSideMenuScreenBase = productsScreenBase.clickHamburgerMenuToGetLeftSideMenu();
         Assert.assertTrue(leftSideMenuScreenBase.isOpened(), "left Side Menu is not opened");
 
-        // Click Log Out
         LoginScreenBase loginScreenBase = leftSideMenuScreenBase.clickLogOutButton();
         Assert.assertTrue(loginScreenBase.isOpened(), "Login Screen is not opened");
     }
