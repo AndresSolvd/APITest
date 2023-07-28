@@ -42,6 +42,7 @@ public class CartScreen extends CartScreenBase {
 
     @Override
     public CheckOutYourInformationScreenBase clickCheckOutButton() {
+        swipe(checkOutButton);
         checkOutButton.click();
         return initPage(CheckOutYourInformationScreenBase.class);
     }
