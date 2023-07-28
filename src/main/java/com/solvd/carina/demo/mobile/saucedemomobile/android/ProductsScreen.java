@@ -27,7 +27,7 @@ public class ProductsScreen extends ProductsScreenBase {
     @FindBy(xpath = "(//android.widget.TextView[@content-desc=\"test-Item title\"])[@text='%s']")
     private ExtendedWebElement productTitleS;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Menu\"]/android.view.ViewGroup/android.widget.ImageView")
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Menu\"]")
     private ExtendedWebElement hamburgerMenuButtonToGetLeftSideMenu;
 
     public ProductsScreen(WebDriver driver) {

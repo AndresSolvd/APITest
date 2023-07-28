@@ -21,13 +21,14 @@ public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
         ProductsScreenBase productsScreenPage = loginScreenBase.clickLoginButton();
         Assert.assertTrue(productsScreenPage.isOpened(), "Products screen is not opened");
     }
+
     @Test
     @MethodOwner(owner = "Andres")
     public void productAddedToTheCartTest() {
         String productTitle = R.TESTDATA.get("second_product_name");
 
         // Log In
-        ProductsScreenBase productsScreenBase = authUtilsScreen.loginStandardUser();
+        ProductsScreenBase productsScreenBase = mobileAuthUtils.loginStandardUser();
         Assert.assertTrue(productsScreenBase.isOpened(), "Products screen is not opened");
 
         // Go to Product screen
@@ -47,7 +48,7 @@ public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
     @MethodOwner(owner = "Andres")
     public void logOutTest() {
         // Log In
-        ProductsScreenBase productsScreenBase = authUtilsScreen.loginStandardUser();
+        ProductsScreenBase productsScreenBase = mobileAuthUtils.loginStandardUser();
         Assert.assertTrue(productsScreenBase.isOpened(), "Products screen is not opened");
 
         // Go to LeftSide Menu
@@ -67,40 +68,31 @@ public class SauceDemoMobileTest extends AbstractSauceDemoScreenTest {
         String lastName = R.TESTDATA.get("last_name");
         String zip = R.TESTDATA.get("zip");
 
-        // Log In
-        ProductsScreenBase productsScreenBase = authUtilsScreen.loginStandardUser();
+        ProductsScreenBase productsScreenBase = mobileAuthUtils.loginStandardUser();
         Assert.assertTrue(productsScreenBase.isOpened(), "Products screen is not opened");
 
-        // Go to Product screen
         ProductDetailsScreenBase productDetailsScreenBase = productsScreenBase.clickProductTitle(productTitle);
         Assert.assertTrue(productDetailsScreenBase.isOpened(), "Product details screen is not opened");
 
-        // Add the product to the cart
         productDetailsScreenBase.clickAddToCardButton();
 
-        // Go to Cart screen and verify product has been added
         CartScreenBase cartScreenBase = productDetailsScreenBase.clickCartButton();
         Assert.assertTrue(cartScreenBase.isOpened(), "Cart screen is not opened");
         Assert.assertTrue(cartScreenBase.isProductDisplayed(productTitle), "Product is not in the cart");
 
-        // CLick Check Out Button
         CheckOutYourInformationScreenBase checkOutYourInformationScreenBase = cartScreenBase.clickCheckOutButton();
         Assert.assertTrue(checkOutYourInformationScreenBase.isOpened(), "The information Page is not opened");
 
-        // Input information required data
         checkOutYourInformationScreenBase.typeFirstName(firstName);
         checkOutYourInformationScreenBase.typeLastName(lastName);
         checkOutYourInformationScreenBase.typeZipcode(zip);
 
-        // Go to Overview Screen
         OverviewScreenBase overviewScreenBase = checkOutYourInformationScreenBase.clickContinue();
         Assert.assertTrue(overviewScreenBase.isOpened(),"Overview screen is not opened");
 
-        // Click Finish
         ThankYouScreenBase thankYouScreenBase = overviewScreenBase.clickFinish();
         Assert.assertTrue(thankYouScreenBase.isOpened(), " Thank You screen is not opened");
 
-        // Back to Product Screen
         ProductsScreenBase productScreenBase = thankYouScreenBase.clickBackHomeButton();
         Assert.assertTrue(productScreenBase.isOpened(), "Product Page is not opened");
     }

@@ -5,7 +5,8 @@ import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductsScreenBase;
 import com.zebrunner.carina.utils.R;
 import com.zebrunner.carina.utils.factory.ICustomTypePageFactory;
 
-public class AuthUtilsScreen implements ICustomTypePageFactory{
+public class MobileAuthUtils implements ICustomTypePageFactory{
+
     public ProductsScreenBase login(String username, String password) {
         LoginScreenBase loginScreenBase = initPage(LoginScreenBase.class);
         loginScreenBase.typeUsername(username);
