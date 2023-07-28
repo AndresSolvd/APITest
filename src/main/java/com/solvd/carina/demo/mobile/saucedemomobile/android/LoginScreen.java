@@ -3,7 +3,6 @@ package com.solvd.carina.demo.mobile.saucedemomobile.android;
 import com.solvd.carina.demo.mobile.saucedemomobile.common.LoginScreenBase;
 import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductsScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;

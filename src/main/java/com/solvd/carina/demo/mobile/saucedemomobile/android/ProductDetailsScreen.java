@@ -2,11 +2,9 @@ package com.solvd.carina.demo.mobile.saucedemomobile.android;
 
 import com.solvd.carina.demo.mobile.saucedemomobile.common.CartScreenBase;
 import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductDetailsScreenBase;
-import com.solvd.carina.demo.mobile.saucedemomobile.common.ProductsScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
