@@ -22,7 +22,7 @@ public class CheckOutYourInformationScreen extends CheckOutYourInformationScreen
     @FindBy(xpath = "//android.widget.EditText[@content-desc=\"test-Zip/Postal Code\"]")
     private ExtendedWebElement zipCodeField;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-CONTINUE\"]/android.widget.TextView")
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-CONTINUE\"]")
     private ExtendedWebElement continueButton;
 
     public CheckOutYourInformationScreen(WebDriver driver) {

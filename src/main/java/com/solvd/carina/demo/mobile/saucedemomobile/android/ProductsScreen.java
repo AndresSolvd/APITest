@@ -18,7 +18,7 @@ public class ProductsScreen extends ProductsScreenBase {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Cart drop zone\"]//android.widget.TextView[@text='PRODUCTS']")
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Cart drop zone\"]")
     private ExtendedWebElement screenTitle;
 
     @FindBy(css = "//android.view.ViewGroup[@content-desc='test-Cart']/android.view.ViewGroup/android.widget.ImageView")
