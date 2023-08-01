@@ -20,6 +20,14 @@
 	<test name="Mobile test">
 		<classes>
 			<class name="com.solvd.carina.demo.MobileSampleTest" />
+			<class name="com.solvd.carina.demo.SauceDemoMobileTest">
+				<methods>
+					<include name="loginTest"/>
+					<include name="productAddedToTheCartTest"/>
+					<include name="logOutTest"/>
+					<include name="checkOutProcessTest"/>
+				</methods>
+			</class>
 		</classes>
 	</test>
 
